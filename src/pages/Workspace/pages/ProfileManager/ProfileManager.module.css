@@ -1,0 +1,61 @@
+.pmContent {
+    display: flex;
+    justify-content: center;
+}
+
+.pmContent h3 {
+    text-align: center;
+}
+
+
+.pmForms {
+    margin: 20px;
+}
+
+@media (max-width: 992px) { 
+    .pmContent {
+       flex-direction: column;
+        align-items: center;
+    }
+    .pmForms {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pmForms button {
+        width: 50vw;
+    }
+    .pmForms input {
+        width: 60vw;
+    }
+    .pmForms label {
+        width: 60vw;
+        text-align: center;
+    }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .pmForms button {
+        width: 30vw;
+    }
+    .pmForms input {
+        width: 40vw;
+    }
+    .pmForms label {
+        width: 40vw;
+        text-align: center;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) { 
+    .pmForms button {
+        width: 20vw;
+    }
+    .pmForms input {
+        width: 20vw;
+    }
+    .pmForms label {
+        width: 20vw;
+        text-align: center;
+    }
+}

@@ -1,0 +1,19 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary);
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 992px) {
+    footer {
+        padding: 20px 5px;
+    }
+    footer div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

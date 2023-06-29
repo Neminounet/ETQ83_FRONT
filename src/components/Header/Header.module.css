@@ -1,0 +1,115 @@
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    color: var(--primary);
+    font-family: 'Dancing Script', cursive;
+}
+
+.titleContainer h1 {
+    color: var(--primary);
+}
+
+.logoCap {
+    font-size: 2rem;
+    margin: 0 10px;
+    padding: 7px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px var(--secondary);
+    color: var(--primary);
+}
+
+.xsButton {
+    display: none;
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    margin-right: 20px;
+}
+
+@media (max-width: 576px) {
+    .nav {
+        display: none;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .logoCap {
+        font-size: 1.5rem;
+    }
+    .xsButton {
+        display: block;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        margin: 0;
+    }
+    .titleContainer{
+        flex-direction: column;
+    }
+    .titleContainer h1 {
+        font-size: 1.8rem;
+    }
+
+    .logoCap {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 7px;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px var(--secondary);
+        color: var(--primary);
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    .nav button {
+        width: 18vw;
+        font-size: 0.7rem;
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    header {
+        display: flex;
+    }
+    
+    .titleContainer {
+        width: 55vw;
+        flex: none;
+    }
+    .nav {
+        width: 45vw;
+    }
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nav button {
+        width: 15vw;
+        font-size: 0.8rem;
+        margin: 5px 0;
+    }
+}
+
+
+
+
+

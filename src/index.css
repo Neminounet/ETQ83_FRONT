@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #778beb;
+  --secondary: #2f3640;
+  --back-color: #dfe4ea;
+  --text-color: #34495e;
+}
+
+body {
+  margin: 0;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { 
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px;
+}
+
+p, a, li {
+  margin: 5px;
+}
+
+/* Themes  */
+/* ==================== */
+
+button {
+  background-color: var(--primary);
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  transition: opacity 0.5s;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+button:hover {
+  opacity: 80%;
+}
+
+button:disabled {
+  background: #78e08f;
+  border: 1px solid #78e08f;
+}
+
+button.delete {
+  background-color: #cf6a87;
+  border: 1px solid #cf6a87;
+}
+
+button.rdv {
+  background-color: #e15f41;
+  border: 1px solid #e15f41;
+}
+
+form {
+  width: 30vw;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input {
+  width: 60%;
+  padding: 5px 20px;
+  margin-top: 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+}
+
+form input:focus {
+  outline: 2px solid var(--primary);
+}
+
+form select {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  color: white;
+  font-weight: bold;
+}
+
+.form-error {
+  margin-top: 5px;
+  color: red;
+  font-size: 1rem;
+}
+
+input:disabled {
+  background-color: var(--back-color);
+}
+
+
+/* Classes génériques  */
+/* =========================== */
+
+.colorWhite {
+  color: white;
+}
+
+.pagesContainer {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  background-color: var(--back-color);
+  box-shadow: inset 0 1px 4px black;
+}
+
+.pagesContent {
+  height: fit-content;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) { 
+  .pagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--back-color);
+    box-shadow: inset 0 1px 4px black;
+  }
+
+  .pagesContent {
+    width: 90vw;
+  }
+}
+
+
+/* Classes Utilitaires */
+/* ========================= */
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.calc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/*  Flexbox : */
+/* --------------- */
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+/*  Textes */
+/* ---------------------- */
+.ta-center {
+  text-align: center;
+}
+
+
+/*  Margin et padding  : */
+/* ----------------------------- */
+
+.m-5 {
+  margin: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-15 {
+  margin: 15px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.pt-5 {
+  padding-top: 5px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-15 {
+  padding-top: 15px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.pr-15 {
+  padding-right: 15px;
+}
+
+.pr-20 {
+  padding-right: 20px;
+}
+
+.pb-5 {
+  padding-bottom: 5px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pb-15 {
+  padding-bottom: 15px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+

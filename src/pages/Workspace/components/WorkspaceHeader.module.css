@@ -1,0 +1,35 @@
+.headerContent {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 992px) { 
+    .headerContainer {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+        width: 90vw;
+        text-align: center;
+    }
+    .headerContainer h2 {
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .headerContainer {
+        margin: 0;  
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .headerContainer {
+        margin: 0;  
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .headerContent {
+        flex: none;
+        width: 40vw;
+    }
+}

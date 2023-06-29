@@ -1,0 +1,143 @@
+h3, h4 {
+    text-align: center;
+}
+
+.homepageLogo {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+
+.homepageContent {
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.homepageContentImage1 {
+    width: 25vw;
+    background-image: url("../../../public/assets/images/books_apple.jpg");
+    background-position:bottom;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.homepageContentImage2 {
+    width: 25vw;
+    background-image: url("../../../public/assets/images/hand_pen.jpg");
+    background-position:bottom;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.homepageContentText {
+    max-width: 25vw;
+    margin-left: 20px;
+}
+
+.homepageContentText li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 992px) { 
+    .homepageLogo {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+    }
+
+    .homepageContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 5px;
+    }
+
+    .homepageContentImage1 {
+        width: 70vw;
+        height: 150px;
+    }
+
+    .homepageContentImage2 {
+        width: 70vw;
+        height: 150px;
+    }
+
+    .homepageContentText {
+        max-width: 70vw;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .homepageContent li {
+        list-style: none;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .homepageLogo {
+        font-size: 3rem;
+        margin: 20px;
+    }
+
+    .homepageContentImage1 {
+        margin: 10px 0;
+        width: 70vw;
+        height: 200px;
+    }
+
+    .homepageContentImage2 {
+        margin: 10px 0;
+        width: 70vw;
+        height: 200px;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .homepageLogo {
+        font-size: 3.2rem;
+        margin: 15px;
+    }
+
+    .homepageContentImage1 {
+        margin: 15px 0;
+        width: 70vw;
+        height: 250px;
+    }
+
+    .homepageContentImage2 {
+        margin: 15px 0;
+        width: 70vw;
+        height: 250px;
+    }
+}
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .homepageLogo {
+        margin-bottom: 10px;
+    }
+    
+    .homepageContent {
+        width: 90vw;
+    }
+    
+    .homepageContentImage1 {
+        width: 40vw;
+        height: 220px;
+    }
+    
+    .homepageContentImage2 {
+        width: 40vw;
+        height: 220px;
+    }
+    
+    .homepageContentText {
+        max-width: 45vw;
+        margin: 0 20px;
+    }
+}

@@ -1,0 +1,33 @@
+.componentContainer {
+    width: 90%;
+}
+
+.componentContainer h1 {
+   text-align: center;
+}
+
+.rdvDetailContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rdvInfo {
+    background-color: var(--back-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) { 
+    .componentContainer {
+        width: 90vw;
+    }
+    .rdvDetailContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .rdvInfo {
+        width: 80vw;
+    }
+    
+}
+

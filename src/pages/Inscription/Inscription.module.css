@@ -1,0 +1,42 @@
+@media (max-width: 576px) { 
+    .formContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formContent label {
+        width: 60vw;
+        text-align: center;
+    }
+
+    .formContent input {
+        width: 60vw;
+    }
+
+    .formButton {
+        width: 50vw;
+    } 
+
+}
+
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .formContent input {
+        width: 40vw;
+    }
+
+    .formButton {
+        width: 30vw;
+    } 
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .formContent input {
+        width: 30vw;
+    }
+
+    .formButton {
+        width: 20vw;
+    } 
+}

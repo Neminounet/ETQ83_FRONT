@@ -1,0 +1,46 @@
+.rdvContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rdvContent {
+    display: flex;
+    padding: 20px;
+}
+
+.rdvBox {
+    width: 25vw;
+    margin: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--back-color);
+}
+
+.rdvBox form {
+    width: 100%;
+    padding: 10px;
+}
+
+@media (max-width: 992px) { 
+    .rdvContainer {
+       width: 90vw;
+    }
+    .rdvContent {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .rdvBox {
+        width: 80VW;
+        margin: 10PX 20px;
+        padding: 10PX;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--back-color);
+    }
+
+}

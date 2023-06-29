@@ -1,0 +1,27 @@
+.headerXS {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px var(--text-color);
+}
+
+.headerXS ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerXS button {
+    width: 110px;
+    padding: 5px;
+}
+
+@media (min-width: 577px){
+    .headerXS {
+        display: none;
+    }
+}
+

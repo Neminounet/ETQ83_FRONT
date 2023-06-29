@@ -1,0 +1,30 @@
+.availabilityContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.availabilityContent {
+    width: 60vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+@media (max-width: 992px) { 
+    .availabilityContainer {
+       width: 90vw;
+    }
+
+    .availabilityContent {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .availabilityContent {
+        width: 80vw;
+    }
+}

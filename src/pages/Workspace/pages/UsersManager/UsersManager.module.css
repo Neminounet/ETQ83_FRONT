@@ -1,0 +1,29 @@
+.usersManagerContent {
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr; 
+    grid-auto-columns: 1fr; 
+    grid-auto-flow: row;
+}
+
+.id {
+    background-color: var(--back-color);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) { 
+    .usersManagerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .id {
+        display: flex;
+        flex-direction: column;
+    }
+}
