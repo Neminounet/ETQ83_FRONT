@@ -1,4 +1,4 @@
-const API_URL = "http://neminounet.pythonanywhere.com"   
+const API_URL = "https://neminounet.pythonanywhere.com"   
 
 // Création d'un utilisateur :
 // =============================
