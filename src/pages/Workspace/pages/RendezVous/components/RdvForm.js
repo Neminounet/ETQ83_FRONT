@@ -91,21 +91,21 @@ function RdvForm({ postRDV, getAllRDV, setRDVList, today }) {
         <div>
             <form onSubmit={ handleSubmit(submit)}>
                 <div className="d-flex flex-column">
-                    <label htmlFor="degree">Selectionner classe</label>
+                    <label htmlFor="degree">Selectionner la classe</label>
                     <select name="degree" { ...register("degree") }>
                         <option value="" disabled >Choisissez une classe</option>
                         {classes.map((classe, index)=> <option key={index} value={classe}>{classe}</option>)}
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="date">Selectionner date</label>
+                    <label htmlFor="date">Selectionner la date</label>
                     <select name="date" { ...register("date") } onChange={e => setSelectedDate(e.target.value)}>
                         <option value="" disabled >Choisissez une date</option>
                         {Object.keys(availabilities).filter(date => date >= today).map((date, index) => <option key={index} value={date}>{date}</option>)}
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="heure">Selectionner heure</label>
+                    <label htmlFor="heure">Selectionner l'heure</label>
                     <select name="heure" { ...register("heure") }>
                         <option value="" disabled >Choisissez une heure</option>
                         {availabilities[selectedDate]?.filter(a=> a.is_taken !== true ).map((avail, index) => <option key={index} value={avail.id}>{avail.heure}</option>)}
