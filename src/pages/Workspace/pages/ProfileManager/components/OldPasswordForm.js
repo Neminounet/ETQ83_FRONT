@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import AuthContext from "../../../../../context/AuthContext";
 import { checkUser } from "../../../../../apis/user";
 

@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createHashRouter, redirect } from "react-router-dom";
 import { lazy } from "react";
 import App from "./App";
 import rootLoader from "./loaders/rootLoader";
@@ -19,7 +19,7 @@ const RGPD = lazy(()=> import("./pages/RGPD/RGPD"));
 const UsersManager = lazy(()=> import("./pages/Workspace/pages/UsersManager/UsersManager"));
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <App/>,

@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { getAllUsers, deleteUserSU } from "../../../../apis/user";
 import AuthContext from "../../../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 import styles from "./UsersManager.module.css";
 
 function UsersManager(){
 
-    const {user, logout} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     const [ userList, setUserList ] = useState([]);
 
