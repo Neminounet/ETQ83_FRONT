@@ -7,7 +7,7 @@ function Homepage(){
                 <div className={styles.homepageLogo}>
                     <i className="fa-solid fa-graduation-cap"></i>
                 </div>
-                <h3>En Toute quiétude 83, aide aux devoirs et soutien scolaire du CP à la troisième.</h3>
+                <h3>En Toute Quiétude 83, aide aux devoirs et soutien scolaire du CP à la troisième.</h3>
                 <div className={styles.homepageContent}>
                     <div className={styles.homepageContentImage1}>
                     </div>
@@ -15,7 +15,7 @@ function Homepage(){
                         <h4>Cours particuliers à domicile.</h4>
                         <ul>
                             <li>Séances ludiques, adaptées aux élèves en fonction des besoins</li>
-                            <li><strong>Pour les élèves en l'élémentaire</strong>, aide dans toutes les matières.</li>
+                            <li><strong>Pour les élèves en élémentaire</strong>, aide dans toutes les matières.</li>
                             <li><strong>Pour les élèves au collège</strong>, aide en <em>Français</em>, <em>Mathématiques</em>, <em>Anglais</em>, <em>Espagnol</em>, <em>SVT</em>, <em>Physique/Chimie</em> et <em>Histoire/Géographie</em></li>
                             <li>Jusqu'à 50% de crédit d'impôt grâce au service à la personne</li>
                         </ul>

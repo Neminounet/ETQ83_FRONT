@@ -42,7 +42,7 @@ function RendezVous() {
                             .filter(rdv => rdv.user.id === user.id)
                             .map( rdv=> 
                                 <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}>
-                                <button  className="m-10" disabled={rdv.availability.date > today && !user.is_superuser}>Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { user.is_superuser ? rdv.user.first_name : ""} { user.is_superuser ? rdv.user.last_name : ""}
+                                <button  className="m-10">Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { user.is_superuser ? rdv.user.first_name : ""} { user.is_superuser ? rdv.user.last_name : ""}
                                 </button>
                                 </NavLink>
                             )) : <p>Pas de rendez-vous de plannifié</p>
