@@ -101,7 +101,15 @@ function RdvForm({ postRDV, getAllRDV, setRDVList, today }) {
                     <label htmlFor="date">Selectionner la date</label>
                     <select name="date" { ...register("date") } onChange={e => setSelectedDate(e.target.value)}>
                         <option value="" disabled >Choisissez une date</option>
-                        {Object.keys(availabilities).filter(date => date >= today).map((date, index) => <option key={index} value={date}>{date}</option>)}
+                        {Object.keys(availabilities).filter(date => {
+                            const [day, month, year] = date.split('-')
+                            const formatDate = new Date(`${month}-${day}-${year}`);
+                            const [todayDay, todayMonth, todayYear] = today.split('-');
+                            const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                            // console.log("formatDate :", formatDate);
+                            // console.log("formatToday :", formatToday);
+                            return formatDate >= formatToday;
+                        }).map((date, index) => <option key={index} value={date}>{date}</option>)}
                     </select>
                 </div>
                 <div>

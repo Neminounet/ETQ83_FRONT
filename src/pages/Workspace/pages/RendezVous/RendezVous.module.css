@@ -9,8 +9,15 @@
     padding: 20px;
 }
 
+.rdvContent button { 
+    width: 20vw;
+    height: 5vh;
+}
+
 .rdvBox {
     width: 25vw;
+    height: 50vh;
+    overflow: scroll;
     margin: 0 20px;
     border-radius: 10px;
     display: flex;
@@ -24,7 +31,8 @@
     padding: 10px;
 }
 
-@media (max-width: 992px) { 
+
+@media (max-width: 1199px) { 
     .rdvContainer {
        width: 90vw;
     }
@@ -33,14 +41,18 @@
         padding: 20px;
     }
     .rdvBox {
-        width: 80VW;
-        margin: 10PX 20px;
-        padding: 10PX;
+        width: 80vw;
+        margin: 10px 20px;
+        padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: var(--back-color);
+    }
+    .rdvContent button { 
+        width: 50vw;
+        height: 6vh;
     }
 
 }

@@ -38,7 +38,16 @@ function RendezVous() {
                     <h3>Rendez-vous à venir</h3>
                     {!user.is_superuser ? (
                          rdvList.length > 0 ? (rdvList
-                            .filter(rdv => rdv.availability.date >= today)
+                            .filter(rdv => {
+                                // rdv.availability.date >= today
+                                const [day, month, year] = rdv.availability.date.split('-');
+                                const formatDate = new Date(`${month}-${day}-${year}`);
+                                const [todayDay, todayMonth, todayYear] = today.split('-');
+                                const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                                // console.log("formatToday :", formatToday);
+                                // console.log("rdv.availability.date",rdv.availability.date);
+                                return formatDate >= formatToday;
+                            })
                             .filter(rdv => rdv.user.id === user.id)
                             .map( rdv=> 
                                 <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}>
@@ -48,7 +57,16 @@ function RendezVous() {
                             )) : <p>Pas de rendez-vous de plannifié</p>
                     ) : (
                          rdvList.length > 0 ? (rdvList
-                            .filter(rdv => rdv.availability.date >= today)
+                            .filter(rdv => {
+                                // rdv.availability.date >= today
+                                const [day, month, year] = rdv.availability.date.split('-');
+                                const formatDate = new Date(`${month}-${day}-${year}`);
+                                const [todayDay, todayMonth, todayYear] = today.split('-');
+                                const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                                // console.log("formatToday :", formatToday);
+                                // console.log("rdv.availability.date",rdv.availability.date);
+                                return formatDate >= formatToday;
+                            })
                             .map( rdv=> 
                                 <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}>
                                 <button  className="m-10" disabled={rdv.availability.date > today && !user.is_superuser}>Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { user.is_superuser ? rdv.user.first_name : ""} { user.is_superuser ? rdv.user.last_name : ""}

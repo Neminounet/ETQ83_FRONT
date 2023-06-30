@@ -7,9 +7,19 @@
     }
 }
 
+.containerAdd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .loader {
-    font-size: 2rem;
+    /* display: inline-block; */
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
     color: var(--primary);
     animation: rotate 2s linear infinite;
+    transform-origin: center;
 }
