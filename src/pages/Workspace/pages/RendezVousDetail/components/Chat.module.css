@@ -36,6 +36,17 @@ textarea {
     background-color: var(--back-color);
 }
 
+.btnDelete {
+    background-color: #cf6a87;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
 @media (max-width: 992px) { 
     .messageContainer {
         width: 80vw;

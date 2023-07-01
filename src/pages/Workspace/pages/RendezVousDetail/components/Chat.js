@@ -105,7 +105,7 @@ function Chat({ rdv }) {
                                 </div>
                                 <div className={styles.messageContent}>
                                     <p>{msg.content}</p>
-                                    {user.is_superuser && <button onClick={()=> handleDeleteMessage(msg.id)}>x</button>}
+                                    {user.is_superuser && <div className={styles.btnDelete} onClick={()=> handleDeleteMessage(msg.id)}>x</div>}
                                 </div>
                             </div>
                             
