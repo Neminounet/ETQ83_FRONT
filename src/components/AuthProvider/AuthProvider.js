@@ -11,7 +11,7 @@ function AuthProvider({ children }) {
         initialUser = null
     }
     const [user, setUser] = useState(initialUser);
-    console.log("user : ", user)
+    // console.log("user : ", user)
 
     async function login(data) {
         await loginUser(data)

@@ -11,7 +11,7 @@ function RdvHist({ rdvList, today, user }) {
     // console.log(rdvList);
     return (
         
-        <div className="d-flex flex-column">
+        <>
             <form>
                 <div>
                     <label htmlFor="year">Selectionner l'année</label>
@@ -30,15 +30,28 @@ function RdvHist({ rdvList, today, user }) {
 
             </form>
             {user.is_superuser ? (
-                 rdvList.filter(rdv => rdv.availability.date.includes(selectedYear)).filter(rdv => rdv.availability.date.includes(`-${selectedMonth}-`)).filter(rdv => rdv.availability.date < today ).map(rdv => <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}><button key={rdv.id} className="rdv mb-20">
+                    rdvList.filter(rdv => rdv.availability.date.includes(selectedYear)).filter(rdv => rdv.availability.date.includes(`-${selectedMonth}-`)).filter(rdv => {
+                    const [day, month, year] = rdv.availability.date.split('-');
+                    const formatDate = new Date(`${month}-${day}-${year}`);
+                    const [todayDay, todayMonth, todayYear] = today.split('-');
+                    const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                    return formatDate < formatToday;
+                    }).map(rdv => <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}><button key={rdv.id} className="rdv mb-20">
                 Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { rdv.user.first_name } { rdv.user.last_name }
             </button></NavLink>) 
             ) : (
-                rdvList.filter(rdv => rdv.availability.date.includes(selectedYear)).filter(rdv => rdv.availability.date.includes(`-${selectedMonth}-`)).filter(rdv => rdv.availability.date < today ).filter(rdv => rdv.user.id === user.id).map(rdv => <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}><button key={rdv.id} className="rdv mb-20">
+                rdvList.filter(rdv => rdv.availability.date.includes(selectedYear)).filter(rdv => rdv.availability.date.includes(`-${selectedMonth}-`)).filter(rdv => {
+                    const [day, month, year] = rdv.availability.date.split('-');
+                    const formatDate = new Date(`${month}-${day}-${year}`);
+                    const [todayDay, todayMonth, todayYear] = today.split('-');
+                    const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                    return formatDate < formatToday;
+                }).filter(rdv => rdv.user.id === user.id).map(rdv => <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}><button key={rdv.id} className="rdv mb-20">
                     Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { rdv.user.first_name } { rdv.user.last_name }
                 </button></NavLink>) 
             )}
-        </div>
+        </>
+       
     );
 }
 

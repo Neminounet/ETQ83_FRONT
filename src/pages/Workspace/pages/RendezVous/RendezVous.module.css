@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80vw;
 }
 
 .rdvContent {
@@ -10,12 +11,12 @@
 }
 
 .rdvContent button { 
-    width: 20vw;
-    height: 5vh;
+    width: 16vw;
+    height: 6vh;
 }
 
 .rdvBox {
-    width: 25vw;
+    width: 22vw;
     height: 50vh;
     overflow: scroll;
     margin: 0 20px;
@@ -25,6 +26,7 @@
     align-items: center;
     background-color: var(--back-color);
 }
+
 
 .rdvBox form {
     width: 100%;
@@ -54,5 +56,4 @@
         width: 50vw;
         height: 6vh;
     }
-
 }

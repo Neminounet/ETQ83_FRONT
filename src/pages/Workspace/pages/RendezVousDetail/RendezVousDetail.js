@@ -22,7 +22,7 @@ function RendezVousDetail() {
         <div className={styles.componentContainer}>
             <h1>Rendez-Vous</h1>
             <div className={styles.rdvDetailContainer}>
-                <div className="d-flex flex-column">
+                <div className="d-flex flex-column ai-center">
                     <NavLink className="mb-20" to="../rendezvous">
                         <button>
                         <i className="fa-solid fa-arrow-left"></i>

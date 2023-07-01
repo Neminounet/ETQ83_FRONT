@@ -29,6 +29,9 @@
         text-align: center;
         width: 80vw;
     }
-    
+    .rdvDetailContainer button {
+        width: 40vw;
+        height: 4vh;
+    }
 }
 

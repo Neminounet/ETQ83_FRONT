@@ -51,14 +51,13 @@ function RendezVous() {
                             .filter(rdv => rdv.user.id === user.id)
                             .map( rdv=> 
                                 <NavLink key={rdv.id} to={`../rendezvous/${rdv.id}`}>
-                                <button  className="m-10">Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { user.is_superuser ? rdv.user.first_name : ""} { user.is_superuser ? rdv.user.last_name : ""}
+                                <button  className="m-10" >Niveau : {rdv.degree} le {rdv.availability.date} à {rdv.availability.heure} { user.is_superuser ? rdv.user.first_name : ""} { user.is_superuser ? rdv.user.last_name : ""}
                                 </button>
                                 </NavLink>
                             )) : <p>Pas de rendez-vous de plannifié</p>
                     ) : (
                          rdvList.length > 0 ? (rdvList
                             .filter(rdv => {
-                                // rdv.availability.date >= today
                                 const [day, month, year] = rdv.availability.date.split('-');
                                 const formatDate = new Date(`${month}-${day}-${year}`);
                                 const [todayDay, todayMonth, todayYear] = today.split('-');

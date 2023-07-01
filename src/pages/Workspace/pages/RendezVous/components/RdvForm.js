@@ -35,20 +35,6 @@ function RdvForm({ postRDV, getAllRDV, setRDVList, today }) {
         resolver: yupResolver(validationSchema),
     });
 
-    
-    // async function getSetAvail() {
-    //     const body = await getAvailabilitiesUser();
-    //     const availsByDate = body.reduce((acc, curr) => {
-    //         if (!acc[curr.date]) {
-    //             acc[curr.date] = [];
-    //         }
-    //         acc[curr.date].push({id: curr.id, heure: curr.heure, is_taken: curr.is_taken});
-
-    //         return acc;
-    //     }, {});
-    //     setAvailabilities(availsByDate);
-    // }
-
     async function getSetAvail() {
         const body = await getAvailabilitiesUser();
         if (body) {
@@ -70,7 +56,7 @@ function RdvForm({ postRDV, getAllRDV, setRDVList, today }) {
         getSetAvail();
     }, [])
 
-    console.log(availabilities);
+    // console.log(availabilities);
 
     async function submit(values) {
         const submitValues = {
@@ -86,44 +72,43 @@ function RdvForm({ postRDV, getAllRDV, setRDVList, today }) {
     }
 
     // console.log(availabilities)
+    // console.log(today);
 
     return (
-        <div>
-            <form onSubmit={ handleSubmit(submit)}>
-                <div className="d-flex flex-column">
-                    <label htmlFor="degree">Selectionner la classe</label>
-                    <select name="degree" { ...register("degree") }>
-                        <option value="" disabled >Choisissez une classe</option>
-                        {classes.map((classe, index)=> <option key={index} value={classe}>{classe}</option>)}
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="date">Selectionner la date</label>
-                    <select name="date" { ...register("date") } onChange={e => setSelectedDate(e.target.value)}>
-                        <option value="" disabled >Choisissez une date</option>
-                        {Object.keys(availabilities).filter(date => {
-                            const [day, month, year] = date.split('-')
-                            const formatDate = new Date(`${month}-${day}-${year}`);
-                            const [todayDay, todayMonth, todayYear] = today.split('-');
-                            const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
-                            // console.log("formatDate :", formatDate);
-                            // console.log("formatToday :", formatToday);
-                            return formatDate >= formatToday;
-                        }).map((date, index) => <option key={index} value={date}>{date}</option>)}
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="heure">Selectionner l'heure</label>
-                    <select name="heure" { ...register("heure") }>
-                        <option value="" disabled >Choisissez une heure</option>
-                        {availabilities[selectedDate]?.filter(a=> a.is_taken !== true ).map((avail, index) => <option key={index} value={avail.id}>{avail.heure}</option>)}
-                    </select>
-                </div>
-                <div>
-                    <button disabled={isSubmitting}>Prendre RDV</button>
-                </div>
-            </form>
-        </div>
+        <form onSubmit={ handleSubmit(submit)} className="d-flex flex-column">
+            <div>
+                <label htmlFor="degree">Selectionner classe</label>
+                <select name="degree" { ...register("degree") }>
+                    <option value="" disabled >Choisissez une classe</option>
+                    {classes.map((classe, index)=> <option key={index} value={classe}>{classe}</option>)}
+                </select>
+            </div>
+            <div>
+                <label htmlFor="date">Selectionner Date</label>
+                <select name="date" { ...register("date") } onChange={e => setSelectedDate(e.target.value)}>
+                    <option value="" disabled >Choisissez une date</option>
+                    {Object.keys(availabilities).filter(date => {
+                        const [day, month, year] = date.split('-')
+                        const formatDate = new Date(`${month}-${day}-${year}`);
+                        const [todayDay, todayMonth, todayYear] = today.split('-');
+                        const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+                        // console.log("formatDate :", formatDate);
+                        // console.log("formatToday :", formatToday);
+                        return formatDate >= formatToday;
+                    }).map((date, index) => <option key={index} value={date}>{date}</option>)}
+                </select>
+            </div>
+            <div>
+                <label htmlFor="heure">Selectionner Heure</label>
+                <select name="heure" { ...register("heure") }>
+                    <option value="" disabled >Choisissez une heure</option>
+                    {availabilities[selectedDate]?.filter(a=> a.is_taken !== true ).map((avail, index) => <option key={index} value={avail.id}>{avail.heure}</option>)}
+                </select>
+            </div>
+            <div>
+                <button disabled={isSubmitting}>Prendre RDV</button>
+            </div>
+        </form>
     );
 }
 export default RdvForm;

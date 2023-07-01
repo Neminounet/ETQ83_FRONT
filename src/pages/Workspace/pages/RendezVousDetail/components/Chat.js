@@ -31,6 +31,13 @@ function Chat({ rdv }) {
         return nowDate
     }
 
+    const [day, month, year] = rdv.availability.date.split('-');
+    const formatDate = new Date(`${month}-${day}-${year}`);
+    const today = nowDateFormat(now);
+    const [todayDay, todayMonth, todayYear] = today.split('-');
+    const formatToday = new Date(`${todayMonth}-${todayDay}-${todayYear}`);
+   
+
     
     // console.log(sendDate(now));
 
@@ -108,7 +115,7 @@ function Chat({ rdv }) {
                     <h5>Pas de message</h5>
                 )}
             </div>
-            {rdv.availability.date >= nowDateFormat(now) && 
+            {formatDate >= formatToday && 
                 <form onSubmit={ handleSubmit(submit) }>
                     <div>
                         <label htmlFor="content">Message</label>

@@ -26,8 +26,8 @@ function Header(){
             <nav className={styles.nav}>
                 {user ? (
                     <ul>
-                        { user.is_superuser ? (<NavLink to="http://localhost:8000/docs" target="_blank"><button>API</button></NavLink>) : ""}
-                        { user.is_superuser ? (<NavLink to="http://localhost:8000/admin" target="_blank"><button>Administration</button></NavLink>) : ""}
+                        { user.is_superuser ? (<NavLink to="https://neminounet.pythonanywhere.com/docs" target="_blank"><button>API</button></NavLink>) : ""}
+                        { user.is_superuser ? (<NavLink to="https://neminounet.pythonanywhere.com/admin" target="_blank"><button>Administration</button></NavLink>) : ""}
                         <NavLink to="/workspace"><button>Worskspace</button></NavLink>
                         <NavLink onClick={() => logout()}><button>Déconnexion</button></NavLink>
                     </ul>
