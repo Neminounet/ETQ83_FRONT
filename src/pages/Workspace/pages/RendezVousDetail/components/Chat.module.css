@@ -37,6 +37,9 @@ textarea {
 }
 
 .btnDelete {
+    align-self: center;
+    width: 30px;
+    height: 30px;
     background-color: #cf6a87;
     color: white;
     font-weight: 700;
@@ -44,7 +47,9 @@ textarea {
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 50%;
+
 }
 
 @media (max-width: 992px) { 
