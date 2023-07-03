@@ -36,7 +36,7 @@ function PhoneForm({ user , update}) {
         <form onSubmit={ handleSubmit(submit) }>
             <div>
                 <label htmlFor="telephone">Téléphone</label>
-                <input type="text" name="telephone" {...register("telephone")}/>
+                <input type="text" name="telephone" id="telephone" {...register("telephone")}/>
                 {errors?.telephone && <p className="form-error">{errors.telephone.message}</p>}
             </div>
             {errors.generic && (

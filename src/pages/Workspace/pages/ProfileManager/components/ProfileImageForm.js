@@ -38,7 +38,7 @@ function ProfileImageForm({ user , updateImage}) {
         <form onSubmit={ handleSubmit(submit) }>
             <div>
                 <label htmlFor="profile_image">Image de Profil</label>
-                <input type="file" name="profile_image" {...register("profile_image")}/>
+                <input type="file" name="profile_image" id="profile_image"{...register("profile_image")}/>
                 {errors?.profile_image && <p className="form-error">{errors.profile_image.message}</p>}
             </div>
             {errors.generic && (

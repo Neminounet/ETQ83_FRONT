@@ -16,7 +16,7 @@ function Header(){
     return (
         <header className="p-20">
             <div className={styles.titleContainer}>
-                <NavLink to="/">
+                <NavLink to="/" title="Revenir vers page d'accueil">
                     <i className={`fa-solid fa-graduation-cap ${styles.logoCap}`}></i>  
                 </NavLink>
                 <NavLink to="/">
@@ -25,17 +25,17 @@ function Header(){
             </div>
             <nav className={styles.nav}>
                 {user ? (
-                    <ul>
-                        { user.is_superuser ? (<NavLink to="https://neminounet.pythonanywhere.com/docs" target="_blank"><button>API</button></NavLink>) : ""}
-                        { user.is_superuser ? (<NavLink to="https://neminounet.pythonanywhere.com/admin" target="_blank"><button>Administration</button></NavLink>) : ""}
-                        <NavLink to="/workspace"><button>Worskspace</button></NavLink>
-                        <NavLink onClick={() => logout()}><button>Déconnexion</button></NavLink>
-                    </ul>
+                    <div>
+                        { user.is_superuser ? (<NavLink to="http://localhost:8000/docs" target="_blank" title="Accéder à la documentation de l'API"><button>API</button></NavLink>) : ""}
+                        { user.is_superuser ? (<NavLink to="http://localhost:8000/admin" target="_blank" title="Accéder à l'interface administration"><button>Administration</button></NavLink>) : ""}
+                        <NavLink to="/workspace" title="Accéder à l'espace de travail"><button>Worskspace</button></NavLink>
+                        <NavLink onClick={() => logout()} title="Se déconnecter"><button>Déconnexion</button></NavLink>
+                    </div>
                 ) : (
-                    <ul>
-                        <NavLink to="connexion"><button>Connexion</button></NavLink>
-                        <NavLink to="inscription"><button>Inscription</button></NavLink>
-                    </ul>
+                    <div>
+                        <NavLink to="connexion" title="Se connecter"><button>Connexion</button></NavLink>
+                        <NavLink to="inscription" title="S'inscrire"><button>Inscription</button></NavLink>
+                    </div>
                 )}
             </nav>
             <i className={`fa-solid fa-bars ${styles.xsButton}`} onClick={handleClick}></i>

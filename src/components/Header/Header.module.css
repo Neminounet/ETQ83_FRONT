@@ -36,6 +36,12 @@ header {
     margin-right: 20px;
 }
 
+.nav button {
+    width: 12vw;
+    margin: 8px 0;
+}
+
+
 @media (max-width: 576px) {
     .nav {
         display: none;
@@ -72,12 +78,6 @@ header {
         color: var(--primary);
     }
 
-    .nav ul {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-    }
-
     .nav button {
         width: 18vw;
         font-size: 0.7rem;
@@ -98,18 +98,10 @@ header {
     .nav {
         width: 45vw;
     }
-    .nav ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
+   
     .nav button {
         width: 15vw;
         font-size: 0.8rem;
         margin: 5px 0;
     }
 }
-
-
-
-
-

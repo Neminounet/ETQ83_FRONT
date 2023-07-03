@@ -35,7 +35,7 @@ function LastNameForm({ user , update}) {
         <form onSubmit={ handleSubmit(submit) }>
             <div>
                 <label htmlFor="last_name">Nom</label>
-                <input type="text" name="last_name" {...register("last_name")}/>
+                <input type="text" name="last_name" id="last_name" {...register("last_name")}/>
                 {errors?.last_name && <p className="form-error">{errors.last_name.message}</p>}
             </div>
             {errors.generic && (

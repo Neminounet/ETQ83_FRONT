@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 
 function PasswordForm({ updatePassword, checked, setChecked}) {
@@ -40,12 +41,12 @@ function PasswordForm({ updatePassword, checked, setChecked}) {
         <form onSubmit={ handleSubmit(submit) }>
             <div>
                 <label htmlFor="password">Password</label>
-                <input disabled={!checked } type="password" name="password" {...register("password")}/>
+                <input disabled={!checked } type="password" name="password" id="password" {...register("password")}/>
                 {errors?.password && <p className="form-error">{errors.password.message}</p>}
             </div>
             <div>
                 <label htmlFor="passwordVal">Confirmer Password</label>
-                <input disabled={!checked} type="password" name="passwordVal" {...register("passwordVal")}/>
+                <input disabled={!checked} type="password" name="passwordVal" id="passwordVal" {...register("passwordVal")}/>
                 {errors?.passwordVal && <p className="form-error">{errors.passwordVal.message}</p>}
             </div>
             {errors.generic && (

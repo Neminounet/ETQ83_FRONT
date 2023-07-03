@@ -3,6 +3,12 @@ aside {
     margin: 20px;
 }
 
+.header2 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .buttonContainer button {
     width: 90%;
 }

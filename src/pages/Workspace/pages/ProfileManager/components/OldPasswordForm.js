@@ -39,7 +39,7 @@ function OldPasswordForm({ setChecked }){
         <form onSubmit={ handleSubmit(submit) }>
             <div>
                 <label htmlFor="oldPassword">Password actuel</label>
-                <input type="password" name="oldPassword" {...register("oldPassword")}/>
+                <input type="password" name="oldPassword" id="oldPassword" {...register("oldPassword")}/>
                 {errors?.oldPassword && <p className="form-error">{errors.oldPassword.message}</p>}
             </div>
             {errors.generic && (
